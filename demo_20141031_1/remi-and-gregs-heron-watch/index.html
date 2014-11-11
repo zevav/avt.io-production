@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Remi &amp; Greg's Heron Watch &lt; Averbach Transcription</title>
+	<base href='http://avt.io/'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/responsive.js"></script>
+</head>
+<body>
+
+	<div id="persistent">
+		<img id="logo" src="averbach-logo-grey.png">    
+    
+		<div id="thevideo">
+
+			<video controls id="videoelement" width="320" webkit-playsinline></video>
+			<h3 id="statusid" style="max-width:320px; margin:auto"></h3>    
+		</div><!--thevideo-->
+
+		<p id="heading">Remi and Greg's Heron Watch</p>    
+	</div><!--persistent-->
+
+	<div id="source-transcript" class="transcript" style= "margin:auto; max-height:1800px; overflow-y:scroll">
+
+</div><!--source-transcript-->
+<script type="text/javascript">
+
+$(function(){
+
+   $("#statusid").html("Loading...... ");
+   startTranscriptionService(
+   {
+      videoelementID : "videoelement",
+      transcriptContainerID : "source-transcript", 
+      video : [
+         { vi : "video/video.mp4" , type : "video/mp4"  }
+      ],
+      transcript : "transcripts/transcript.htm"
+   },function(){
+      $("#statusid").html("");
+   });
+
+
+});
+
+
+</script>
+
+</body>
+</html>
