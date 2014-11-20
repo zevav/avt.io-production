@@ -66,7 +66,7 @@ p::selection {
 #source-transcript {
     padding-left: 340px;
     padding-right: 80px;
-    overflow: scroll;
+    overflow-y: scroll;
     height: 98vh;
 }
 
@@ -150,4 +150,25 @@ html.incompatible #source-transcript {
 
 ul {
     list-style-type: none;
+}
+
+
+//* Media Queries
+@media (max-width: 960px) {
+    #persistent {
+        position: fixed;
+        top: 5px;
+        width: 100%;
+        z-index: 99;
+        background: #fff;
+    }
+
+    #videoelement {
+        with: 100%;
+    }
+
+    #source-transcript {
+        padding: 0;
+        padding-top: 200px;
+    }
 }
