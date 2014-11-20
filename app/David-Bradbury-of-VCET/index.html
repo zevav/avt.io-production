@@ -1,0 +1,43 @@
+<!--(bake ../partials/header.html _section="David-Bradbury-of-VCET")-->
+	<div id="persistent">
+		<a href="/"><img id="logo" src="averbach-logo-grey.png"></a>
+
+		<div id="thevideo">
+			<video controls id="videoelement" width="320" preload webkit-playsinline></video>
+			<h3 id="statusid" style="max-width:320px; margin:auto"></h3>    
+		</div><!--thevideo-->
+
+		<p id="heading">David Bradbury of VCET</p>
+	</div><!--persistent-->
+
+	<div id="source-transcript" class="transcript" style= "max-height:1800px;">
+
+</div><!--source-transcript-->
+<script type="text/javascript">
+
+$(function(){
+
+   $("#statusid").html("Loading...... ");
+   startTranscriptionService(
+   {
+      videoelementID : "videoelement",
+      transcriptContainerID : "source-transcript", 
+      video : [
+         { vi : "video/David-Bradbury-of-VCET.mp4" , type : "video/mp4"  }
+      ],
+      transcript : "transcripts/David-Bradbury-of-VCET.htm"
+   },function(){
+      $("#statusid").html("");
+   });
+   
+   if ($.browser.msie) {
+	  $("html").addClass('incompatible');
+}
+
+});
+
+
+
+</script>
+
+<!--(bake ../partials/footer.html)-->

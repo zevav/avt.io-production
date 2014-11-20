@@ -1,2 +1,5 @@
 video/
-demo_20141031_1/video/
+.cache
+.viminfo
+.bash_history
+node_modules/
