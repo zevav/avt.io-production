@@ -28,7 +28,10 @@
 		<a href="/"><img id="logo" src="averbach-logo-grey.png"></a>
 
 		<div id="thevideo">
-			<video controls id="videoelement" width="320" preload webkit-playsinline></video>
+			<video controls id="videoelement" width="320" preload webkit-playsinline>
+            <source src="video/btvcc-10-6-14-1.mp4" type="video/mp4">      
+            <source src="video/btvcc-10-6-14-1.webm" type="video/webm">      
+         </video>
 			<h3 id="statusid" style="max-width:320px; margin:auto"></h3>    
 		</div><!--thevideo-->
 
@@ -50,21 +53,24 @@ $(function(){
       videoelementID : "videoelement",
       transcriptContainerID : "source-transcript", 
       video : [
-         { vi : "video/btvcc-10-6-14-1.mp4" , type : "video/mp4"  }
+         { vi : "video/btvcc-10-6-14-1.mp4" , type : "video/mp4"  },
+         { webm : "video/btvcc-10-6-14-1.webm" , type : "video/webm"  }
       ],
       transcript : "transcripts/span-btvcc-10-6-14-1.htm"
    },function(){
       $("#statusid").html("");
    });
-   
-   if ($.browser.msie) {
-	  $("html").addClass('incompatible');
-}
-
 });
 
 
 
+</script>
+<script>
+$(function() {
+	if ($.browser.msie || $.browser.mozilla) {
+	  $("html").addClass('incompatible');
+	}
+});
 </script>
 </body>
 </html>

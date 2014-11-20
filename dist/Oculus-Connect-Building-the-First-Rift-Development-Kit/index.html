@@ -54,15 +54,17 @@ $(function(){
    },function(){
       $("#statusid").html("");
    });
-   
-   if ($.browser.msie) {
-	  $("html").addClass('incompatible');
-}
-
 });
 
 
 
+</script>
+<script>
+$(function() {
+	if ($.browser.msie || $.browser.mozilla) {
+	  $("html").addClass('incompatible');
+	}
+});
 </script>
 </body>
 </html>

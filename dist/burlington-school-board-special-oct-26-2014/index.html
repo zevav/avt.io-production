@@ -62,5 +62,12 @@ $(window).ready( function(){
 
 
 </script>
+<script>
+$(function() {
+	if ($.browser.msie || $.browser.mozilla) {
+	  $("html").addClass('incompatible');
+	}
+});
+</script>
 </body>
 </html>
