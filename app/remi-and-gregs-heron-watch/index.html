@@ -1,0 +1,40 @@
+<!--(bake ../partials/header.html _section="remi-and-gregs-heron-watch")-->
+	<div id="persistent">
+		<img id="logo" src="averbach-logo-grey.png">    
+    
+		<div id="thevideo">
+
+			<video controls id="videoelement" width="320" webkit-playsinline></video>
+			<h3 id="statusid" style="max-width:320px; margin:auto"></h3>    
+		</div><!--thevideo-->
+
+		<p id="heading">Remi and Greg's Heron Watch</p>    
+	</div><!--persistent-->
+
+	<div id="source-transcript" class="transcript" style= "margin:auto; max-height:1800px; overflow-y:scroll">
+
+</div><!--source-transcript-->
+<script type="text/javascript">
+
+$(function(){
+
+   $("#statusid").html("Loading...... ");
+   startTranscriptionService(
+   {
+      videoelementID : "videoelement",
+      transcriptContainerID : "source-transcript", 
+      video : [
+         { vi : "video/video.mp4" , type : "video/mp4"  }
+      ],
+      transcript : "transcripts/transcript.htm"
+   },function(){
+      $("#statusid").html("");
+   });
+
+
+});
+
+
+</script>
+
+<!--(bake ../partials/footer.html)-->
