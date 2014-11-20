@@ -11,3 +11,5 @@ To get started using grunt:
 3. Install the specific grunt modules. First `cd` to the project directory, then run `npm install`
 
 While developing, Grunt can be used in two modes. `grunt watch` will watch all of the files in `app/` for changes and will run the build task whenever a file is changed. `grunt build` can be used to run the build task once without constantly watching. The watch task can be ended with `ctrl-c`.
+
+To deploy, upload the `dist/` folder rather than the entire project folder.
