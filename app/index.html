@@ -1,22 +1,79 @@
-<!--(bake partials/header.html _section="home")-->
-	<a href="https://avtranscription.com"><img id="logo" src="averbach-logo-grey.png"></a>
-	<div id="toc">
-    
-		<h1>Burlington City Council</h1>
-		<ul>
-			<li><a href="burlington-city-council-oct-6-2014-part-1">Burlington City Council, Oct. 6th 2014 (Part 1)</a></li>
-		</ul>
-		<h1>Burlington School Board</h1>
-		<ul>
-			<li><a href="burlington-school-board-special-oct-26-2014">Burlington School Board Special Meeting, Oct. 26th 2014</a></li>
-		</ul>
-		<h1>Startups/Tech</h1>
-		<ul>
-			<li><a href="David-Bradbury-of-VCET">David Bradbury of VCET</a></li>
-			<li><a href="Oculus-Connect-Building-the-First-Rift-Development-Kit">Oculus Connect: Building the First Rift Development Kit</a></li>
-			<li><a href="WooSports-Leo-Koenig-Demoing-the-Woo">WooSports: Leo Koenig Demoing the Woo</a></li>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Transcript v2</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+	<style>
+			.tags{
+                float: right;
+            }
+			#tagsList{
+				width:358px;
+			}
+			#tagsList ul{
+			  text-align: center;
+			  padding: 0;
+			}
+			#tagsList ul li{
+				display:inline-block;
+			}
+
+			.active_cls{
+				color: #fff !important;
+				background-color: #036;
+			}
+
+			
+			#tagsList ul li a{
+				text-decoration: none;
+				padding: 4px;
+				color: #308FFC;
+				font-size:16px;
+			}
+	</style>
 	
-		</ul>
-	</div><!--toc-->
-</body>
-</html>
+<body>
+
+<div id="persistent">
+	<a href="http://avt.io/"><img id="logo" src="assets/css/averbach-logo-grey.png"></a>
+	<div id="thevideo">
+		<video id="videoelement" preload="" webkit-playsinline="" controls></video>
+		<h3 id="statusid" style="max-width:320px; margin:auto"></h3>    
+	</div>
+	<p id="heading">avt.io2 DEMO</p>
+	<p id="heading">May 11, 2015</p>  
+	<div id="tagsList"></div>
+</div>
+
+<div id="source-transcript" class="transcript" style="max-height:1800px;"><article>
+  
+</div>
+<script type="text/javascript">
+
+$(window).ready( function(){
+	$("#statusid").html("Loading...... ");
+	startTranscriptionService(
+		{
+			videoelementID : "videoelement",
+			transcriptContainerID : "source-transcript", 
+			video : [
+				{ vi : "assets/res/Andrew + Nate.mp4" , type : "video/mp4"  } 
+			],
+      		transcript : "assets/res/andrew_nate.html",
+			sharebutton:'mark',
+            tagcontainer:'tagsList'
+   		},
+		function(){
+			$("#statusid").html("");
+		});	
+});
+
+
+
+</script>  
+
+<iframe frameborder="0" scrolling="no" style="border: 0px; display: none; background-color: transparent;"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="null" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:false,&quot;ss&quot;:true}" style="display: none;"></div></body></html>
