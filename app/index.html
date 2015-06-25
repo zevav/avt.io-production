@@ -34,6 +34,12 @@
 				color: #308FFC;
 				font-size:16px;
 			}
+                        .editModetext{
+                            background-color: #ACF59C;
+                        }
+                        .editedColor{
+                            background-color: rgb(71, 201, 255);
+                        }
 	</style>
 	
 <body>
@@ -47,6 +53,12 @@
 	<p id="heading">avt.io2 DEMO</p>
 	<p id="heading">May 11, 2015</p>  
 	<div id="tagsList"></div>
+        
+        <div>
+            <button id="editModebtn">
+                Enable Edit Mode
+            </button>
+        </div>
 </div>
 
 <div id="source-transcript" class="transcript" style="max-height:1800px;"><article>
@@ -65,7 +77,12 @@ $(window).ready( function(){
 			],
       		transcript : "assets/res/andrew_nate.html",
 			sharebutton:'mark',
-            tagcontainer:'tagsList'
+            tagcontainer:'tagsList',
+            editbutton:'edit',
+            inputcontent:'newdata',
+            editModebtn:'editModebtn',
+            maxPlayBackRate:3,
+            maxRewindRate:1
    		},
 		function(){
 			$("#statusid").html("");
